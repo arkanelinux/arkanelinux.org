@@ -1,0 +1,27 @@
+@media only screen and (max-width: 900px) {
+	.project_name {
+		display: none !important;
+	}
+
+	.nav {
+		text-align: center !important;
+		width: 100% !important;
+	}
+}
+
+
+@media only screen and (max-width: 750px) {
+	.container {
+		align-items: center !important; 
+		justify-content: center !important;
+		flex-direction: column !important;
+	}
+
+	.text_box, .text_box_wide, .download_display, .text_box_half {
+		padding: 20px !important;
+	}
+
+	.text_box_half {
+		width: auto !important;
+	}
+}

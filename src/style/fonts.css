@@ -1,0 +1,33 @@
+@font-face {
+	font-family: 'OpenSans-Bold';
+  src: url(/fonts/OpenSans/OpenSans-Bold.ttf);
+	font-weight: bold;
+}
+
+@font-face {
+  font-family: 'OpenSans-Thin';
+  src: url(/fonts/OpenSans/OpenSans-Light.ttf);
+	font-weight: thin;
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url(/fonts/OpenSans/OpenSans-Regular.ttf);
+	font-weight: normal;
+}
+
+* {
+  font-family: 'OpenSans-Regular';
+}
+
+.font_thin {
+ font-family: 'OpenSans-Thin' !important;
+ font-weight: normal;
+}
+
+.font_thin_flat {
+ font-family: 'OpenSans-Thin' !important;
+ font-weight: normal;
+ text-decoration: none;
+ color: inherit;
+}
