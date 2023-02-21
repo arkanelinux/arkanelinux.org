@@ -291,3 +291,7 @@ header a:hover {
 	width: 100%;
 	color: #565d61;
 }
+
+.boxed_logo {
+	max-width: 300px !important;
+}
