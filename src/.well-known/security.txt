@@ -1,0 +1,5 @@
+Contact: mailto:contact@arkanelinux.org
+Expires: 2026-04-30T23:01:00.000Z
+Encryption: https://github.com/arkanelinux/arkane-keyring/blob/main/arkane.gpg
+Preferred-Languages: EN
+Canonical: https://arkanelinux.org/.well-known/security.txt
