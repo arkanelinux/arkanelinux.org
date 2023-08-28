@@ -295,3 +295,27 @@ header a:hover {
 .boxed_logo {
 	max-width: 300px !important;
 }
+
+.notify_banner {
+	width: 100%;
+	max-width: 600px;
+	padding: 20px;
+	background-color: #ff612f;
+	color: #fff;
+	margin: auto;
+}
+
+.banner_close_button {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.banner_close_button:hover {
+  color: black;
+}

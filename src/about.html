@@ -15,9 +15,9 @@
       </div>
       <div class="nav">
 	      <a href="/">Home</a>
-	      <a href="/downloads">Download</a> 
+	      <a href="/downloads">Download</a>
 	      <a href="/about" class="nav_selected">About</a>
-	      <a href="https://github.com/arkanelinux/" target="_blank">GitHub</a>  
+	      <a href="https://github.com/arkanelinux/" target="_blank">GitHub</a>
       </div>
     </div>
     </header>
@@ -25,15 +25,15 @@
 			<div class="container_paragraph">
 				<div class="text_box_wide">
 					<h1 class="font_thin padded_h">About Arkane Linux</h1>
-					<p>Hi, I am Dennis ten Hoove, the founder and as of writing only maintainer working on Arkane Linux. Here I will give you a brief backstory on the Arkane project and a rough overview of its overarching philosophy and goals.</p>
 					<h2 class="font_thin padded_hb">Philosophy</h2>
-					<p>Arkane is driven by an experimental mindset towards the bleeding edge, when a new and upcoming technology hits it will quickly be adopted. Arkane will be one of the first distros to enable and ship by default with upcoming features and software which make a meaningful impact on the desktop user experience. That does not mean Arkane is a testing bed of alpha and beta quality software, potentially invasive changes with a large impact will only be adopted once the software is considered stable.</p>
-					<p>Software should be used as intended, it should not be heavily extended and tweaked for this hurts the overall user experience. I am not a fan of distros who's interface looks like unicorn puke or where I am unable to touch the keyboard without triggering some unintended shortcut, the defaults are usually far more reasonable so I like to just have these unchanged. Arkane by default will ship with mostly stock software, only minimal and uninvasive tweaks which have can have a positive impact on the user experience and workflow are seriously considered and possibly implemented.</p>
+					<p>Arkane is driven by an experimental mindset towards the bleeding edge, when a new and upcoming technology hits it will quickly be adopted. Arkane will be one of the first distros to enable and ship by default with upcoming features and software which make a meaningful impact on the desktop user experience. That does not mean Arkane is a testing bed of alpha and beta quality software, software is only adopted once considered stable.</p>
+					<p>Software should be used as intended, it should not be heavily extended and tweaked for this hurts the overall user experience. I am not a fan of distros who's interface looks like unicorn puke or where I am unable to touch the keyboard without triggering some unintended shortcut, the defaults are usually far more reasonable so I like to just have these unchanged. Arkane by default will ship with mostly stock software, only minimal and uninvasive tweaks which have can have a positive impact on the user experience and workflow are seriously considered and implemented.</p>
 					<p>The user interface should provide a uniform experience, I don't want Qt, Electron, Flutter etc.. apps on my GNOME desktop for they do not integrated nicely with it. Arkane does everything to ensure a uniform experience.</p>
 					<p>Operating systems should provide a minimal template on which you can build your own fun. By default Arkane ships GNOME with most core apps and Mozilla Firefox, exclusively the apps most users would expect on their desktop and nothing more.</p>
-					<p>I like to tweak my systems, to play around and see how much performance I could reasonable get out of a particular system. Arkane's x84-64-v3 march target is a reasonable choice for it does not break compatibility with modern systems.</p>
 					<h2 class="font_thin padded_hb">History</h2>
 					<p>Arkane started off with me exploring the Arch Linux build tools, once again impressed by the flexibility of Arch and its toolstack I quickly decided to take it further and mature this experiment in to a proper Arch Linux-based distro. And this is the point at which we are now, Arkane is taking shape nicely and nearing the beta stage.</p>
+					<p>It started off as an attempt at making a full rebuild of Arch for x86-64-v3, a hugely fun project but the scripts written for it were (knowingly, damn you Docker for breaking fakeroot at the wrong time!) written with major flaws. A full revision of all work was required to which means effectively redoing the entire buildbot project.</p>
+					<p>Before I could seriously undergo this attempt at rewriting buildbot I started to think about immutability and its theoretical implementation. In theory implementing it should be trivial, so I attempted a manual configuration of such a setup and it was a huge success! After a couple of months of slowly writing Arkanium (initially named bttrfs) I now have a mostly functional (yet also mostly untested) automatic deployment and configuration script ready for proper testing.</p>
 					<h2 class="font_thin padded_hb">The future</h2>
 					<p>The first thing on the list would be to continue refining Arkane Linux, the software ecosystem is in constant motion and Arkane needs to tail it.</p>
 					<p>A secondary goal would be to build an ARM variant of Arkane based on Arch Linux ARM.</a>
