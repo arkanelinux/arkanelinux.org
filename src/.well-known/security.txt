@@ -1,5 +1,22 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
 Contact: mailto:contact@arkanelinux.org
-Expires: 2026-04-30T23:01:00.000Z
-Encryption: https://github.com/arkanelinux/arkane-keyring/blob/main/arkane.gpg
-Preferred-Languages: EN
+Expires: 2028-11-11T00:00:00.000Z
+Encryption: https://github.com/arkanelinux/arkane-keyring/blob/main/arkane.gpg, https://codeberg.org/arkanelinux/arkane-keyring/src/branch/main/arkane.gpg
+Preferred-Languages: en, nl
 Canonical: https://arkanelinux.org/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCAAdFiEEk2fXkVJjGWb/CUwkK6kdwlY7g9EFAmVOv04ACgkQK6kdwlY7
+g9GgKAv9HwTXUsKUzM7q+7R+IcaDXE5HLNhbdjh/7ABSh+rfLdzTvXk8OkrXzw7w
+GTRra/W2NPfTRL/ZC7IIsNpUaUUvQq+DG3m7jxRpMoapFq84/VVfXkTtnRhjpoYZ
+L5peDSWlYM1iPSseDC1iD6j+VRf0uALTPgj4IdPrPQ+Sjj6bq/dbAkpS/1gppOpY
+GNSgqSRUY1JpdjDCoRvPPC50fGBmphUZgPVr5JOHKbm05ycYXEtpkKAja0z1Qwkr
+Ym83OrXM2N4JS2khOwHaw3ShoEx+l49I7iIYZMjlW69fzoiUDfTtIBm1oRaI6Hmy
+ukNbvp13pWpLwtv4awjCu1LE2kABDai0LjSwctLfOcxzQ4LHuVq6AxayFn/P8m3G
+kovF1j5X1+vP7Orswlpd4cNzoexy5IqNqeVudhdfd2IWVIcywoSdHWD/0SUIDC+3
+WZ2LNrQ4lBsHPz6aceZarog8M0XP+3YjmLi10F/pzZ1YS6wbfmHLHMcOHGneAsxP
+O00rAfUs
+=dDVC
+-----END PGP SIGNATURE-----
