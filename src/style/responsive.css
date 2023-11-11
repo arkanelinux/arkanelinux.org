@@ -25,3 +25,46 @@
 		width: auto !important;
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	* {
+		color: #fff;
+	}
+
+	body, html {
+		background-color: #26252b;
+	}
+
+	header {
+		background-color: #212026;
+	}
+
+	.highlight_section {
+		background-color: #212026;
+		border-color: #212026;
+	}
+
+	.display_download {
+		background-color: #212026;
+		border-color: #302f35;
+	}
+
+	.development {
+		background: repeating-linear-gradient(45deg, #2d2c33, #2d2c33 35px, #212026 35px, #212026 70px);
+	}
+
+	.development_fade {
+		background-image: linear-gradient(to top, rgba(33, 32, 38, 100), rgba(239, 242, 244, 0));
+	}
+
+	.download, .db_wrapper {
+		background-color: #302f35;
+		border-color: #302f35;
+		color: #fff !important;
+	}
+
+	.notify_banner {
+		background-color: #bd4b27;
+	}
+
+}
