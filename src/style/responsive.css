@@ -67,4 +67,20 @@
 		background-color: #bd4b27;
 	}
 
+	#index_img_one {
+		content: url("/img/gnome-desktop-1-dark.webp");
+	}
+
+	#index_img_two {
+		content: url("/img/gnome-desktop-2-dark.webp");
+	}
+
+	#index_img_three {
+		content: url("/img/gnome-desktop-3-dark.webp");
+	}
+
+	.download_img_gnome {
+		content: url("/img/arkane-gnome-download-dark.webp");
+	}
+
 }
