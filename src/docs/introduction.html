@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta property="og:title" content="Arkane Linux">
+		<meta property="og:title" content="Arkane Linux - Introduction">
 		<meta property="og:description" content="An opinionated, immutable multi-root Arch-based Linux distibution.">
 		<meta property="og:image" content="https://arkanelinux.org/img/branding/arkane-logo.webp">
 		<title>Arkane Linux - Introduction</title>
@@ -19,7 +19,7 @@
       <div class="nav">
 	      <a href="/">Home</a>
 	      <a href="/downloads">Download</a>
-	      <a href="/about" class="nav_selected">About</a>
+	      <a href="/about">About</a>
 	      <a href="https://github.com/arkanelinux/" target="_blank">GitHub</a>
       </div>
     </div>
@@ -28,7 +28,47 @@
 			<div class="container_paragraph">
 				<div class="text_box_wide">
 					<h1 class="font_thin padded_h">Getting started with Arkane Linux</h1>
-					<p></p>
+					<p>Lets start off with setting expectations; Arkane Linux is accessible to all, yet it assumes those using it have a fairly decent understanding of GNU/Linux. As stated on the front-page, Arkane does not introduce pointless abstraction, this means the system does not do any hand-holding, it assumes you are familiar with the components which comprise it and have the ability to read the manual of said components.</p>
+					<p>This document will give you a technical overview of Arkane and detail the specifics of its configuration.</p>
+					<p>Here is detailed the default configurion of an installed system, the configuration of the ISO installation images differs in various ways from a full proper install.</p>
+					<h2 class="font_thin padded_hb">Base configuration of GNOME-based variants</h2>
+					<p>The GNOME variants all provide a very comparable configuration, a stock gnome-shell with the following notable tweaks and configurations;</p>
+					<ul>
+						<li>Dark mode by default</li>
+						<li>A custom wallpaper</li>
+						<li>Preloaded with stable but not (yet) default GNOME apps from the GNOME Circle and GNOME Project</li>
+						<li><code>mutter-dynamic-buffering</code> patches included</li>
+						<li>Rebuild of <code>gnome-software</code> with packagekit support</li>
+						<li><code>firefox</code> defaults to Wayland</li>
+						<li><code>/home</code> Btrfs subvolume</li>
+						<li>systemd-boot bootloader</li>
+						<li>Swapfile configured in <code>/var</code></li>
+					</ul>
+					<h2 class="font_thin padded_hb">Arkdep-based system specific</h2>
+					<p>Arkdep images mostly grab the above mentioned configuration with the exclusion of the packagekit plugin, since the system is immutable and managed by arkdep there is no reason to include it.</p>
+					<p>The following changes are applied to the filesystem;</p>
+					<ul>
+						<li><code>/opt</code> is symlinked to <code>/var/opt</code></li>
+						<li><code>/srv</code> is symlinked to <code>/var/srv</code></li>
+						<li><code>/root</code> is symlinked to <code>/var/roothome</code></li>
+						<li><code>/usr/local</code> is symlinked to <code>/var/usrlocal</code></li>
+						<li><code>/usr/lib/locale</code> is symlinked to <code>/var/usrliblocale</code></li>
+					</ul>
+					<p>And the following changes in software and configuration;</p>
+					<ul>
+						<li><code>libnss-extrausers</code> PAM module included by default</li>
+						<li><code>shadow</code>, <code>passwd</code> and <code>group</code> files with system accounts are stored in <code>/usr/lib</code>, these are loaded by the extrausers PAM module</li>
+						<li><code>shadow</code>, <code>passwd</code> and <code>group</code> files in <code>/etc</code> exclusively store root and normal user accounts</li>
+						<li><code>podman</code> is included by default</li>
+					</ul>
+					<p>Some notable quirks you should be aware of;</p>
+					<ul>
+						<li><code>/etc</code> is a separate subvolume living inside of the root of the deployment, it is writable by default</li>
+						<li>Any changes outside of <code>/var</code> and <code>/home</code> do not carry over between deployments, manually add your changes to <code>/arkdep/overlay</code></li>
+						<li><code>/var</code> and <code>/home</code> are shared between all deployments and are stored in <code>/arkdep/shared</code></li>
+						<li>Adding any overlay files outside of <code>/arkdep/overlay/etc</code> will make arkdep temporarily unlock the root subvolume for editing</li>
+						<li>The default bootloader entry is changed using UEFI variables on deployment completion, manually use <code>bootctl set-default</code> to change the default deployment to roll back to an older deployment and make it default, or select said older deployment in the systemd-boot bootloader interface</li>
+					</ul>
 				</div>
 			</div>
 		</div>

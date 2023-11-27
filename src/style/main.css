@@ -273,7 +273,7 @@ header a:hover {
 	font-size: 0.95em;
 }
 
-.download_half > section > a {
+.ac_inline {
 	color: #4e9fe8;
 }
 
@@ -318,4 +318,11 @@ header a:hover {
 
 .banner_close_button:hover {
   color: black;
+}
+
+code {
+  background-color: #eaeaea;
+  border-radius: 3px;
+  font-family: monospace;
+  padding: 0 3px;
 }
