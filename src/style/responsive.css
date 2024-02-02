@@ -12,7 +12,7 @@
 
 @media only screen and (max-width: 750px) {
 	.container {
-		align-items: center !important; 
+		align-items: center !important;
 		justify-content: center !important;
 		flex-direction: column !important;
 	}
@@ -24,6 +24,26 @@
 	.text_box_half {
 		width: auto !important;
 	}
+}
+
+@media (prefers-color-scheme: light) {
+	#index_img_one:hover {
+		content: url("/img/gnome-desktop-1-dark.webp");
+		transition-duration: 1s;
+	}
+
+	#index_img_two:hover {
+		content: url("/img/gnome-desktop-2-dark.webp");
+	}
+
+	#index_img_three:hover {
+		content: url("/img/gnome-desktop-3-dark.webp");
+	}
+
+	.download_img_gnome:hover {
+		content: url("/img/arkane-gnome-download-dark.webp");
+	}
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -83,8 +103,24 @@
 		content: url("/img/arkane-gnome-download-dark.webp");
 	}
 
+	#index_img_one:hover {
+		content: url("/img/gnome-desktop-1-light.webp");
+		transition-duration: 1s;
+	}
+
+	#index_img_two:hover {
+		content: url("/img/gnome-desktop-2-light.webp");
+	}
+
+	#index_img_three:hover {
+		content: url("/img/gnome-desktop-3-light.webp");
+	}
+
+	.download_img_gnome:hover {
+		content: url("/img/arkane-gnome-download-light.webp");
+	}
+
 	code {
 		background-color: #4c4c4c;
 	}
-
 }
