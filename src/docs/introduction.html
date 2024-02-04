@@ -34,7 +34,7 @@
 					<h2 class="font_thin padded_hb">Arkdep usage</h2>
 					<p>The system is updated like so;</p>
 					<div class="codeblock">sudo arkdep deploy</div>
-					<p>When the <code>deploy</code> parameter is passed without providing any further arguments Arkdep will read <code>/arkdep/config</code> and combine <code>$repo_url/$repo_default_image</code> to infer from where it is expected to grab its images and which image variant it shoud grab. It will download the database file at <code>$repo_url/$repo_default_image/database</code> and grab the very first entry in the list, the top most entry in the database file is assumed to be the latest image available.</p>
+					<p>When the <code>deploy</code> parameter is passed without providing any further arguments Arkdep will read <code>/arkdep/config</code> and combine <code>$repo_url/$repo_default_image</code> to infer from where it is expected to download its images and which image variant it should download. It will download the database file at <code>$repo_url/$repo_default_image/database</code> and grab the very first entry in the list, the top most entry in the database file is assumed to be the latest image available.</p>
 					<br>
 					<p>A specific image variant can be pulled like so;</p>
 					<div class="codeblock">sudo arkdep deploy test-arkanelinux-kde</div>
@@ -48,6 +48,22 @@
 					<br>
 					<p>Any image present in <code>/arkdep/cache</code>, for example an image called <code>aaabbbccc.tar.zst</code>, can also be installed directly skipping the database download;</p>
 					<div class="codeblock">sudo arkdep deploy cache aaabbbccc</div>
+					<h2 class="font_thin padded_hb">Spinning custom images with arkdep-build</h2>
+					<p>Do you like the technology but do not like the provided images? No problem! You can easily spin and deploy custom images should you desire to do so</p>
+					<p>First make a copy of one of the existing arkane-build configurations in to a directory named <code>arkane-build.d</code>;</p>
+					<div class="codeblock">mkdir arkane-build.d
+					cp -r /etc/arkdep/test-arkanelinux-kde arkane-build.d/</div>
+					<p>Next make your edits to the configuration files in <code>arkdep-build.d/test-arkanelinux-kde</code>, you may also rename the <code>test-arkanelinux-kde</code> configuration's directory, the name of the directory is used to build a specific image by name.</p>
+					<div class="codeblock">mv arkdep-build.d/test-arkanelinux-kde arkdep-build.d/customlinux</div>
+					<p><code>base.list</code> contains a list of packages installed during the bootstrapping process using pacstrap. <code>package.list</code> contains a list of packages which will be installed after the bootstrapping process using a chrooted pacman.</p>
+					<p><code>type</code> is expected to be present but right now only accepts <code>archlinux</code>, in the future support for more distro families will be added.</p>
+					<p>The <code>overlay</code> directory is copied to root after the packages are installed, use the overlay to add custom config files or to enable systemd services.</p>
+					<br>
+					<p>Once all the desired changes have been made you can spin a new image by navigating to <code>arkdep-build.d</code>'s parant directory and running arkdep-build.</p>
+					<div class="codeblock">sudo arkdep-build customlinux</div>
+					<p>Once the image has finished building it will be placed inside of a directory called <code>target</code> located in the <code>arkdep-build.d</code> parent directory. To then install it without using an external repository copy the achive in to the <code>/arkdep/cache</code> directory and define cache as the image source when when doing a deployment.</p>
+					<div class="codeblock">sudo cp target/aaabbbccc.tar.zst /arkdep/cache/
+					sudo arkdep deploy cache aaabbbccc</div>
 					<h2 class="font_thin padded_hb">Base configuration of GNOME-based variants</h2>
 					<p>The GNOME variants all provide a very comparable configuration, a stock gnome-shell with the following notable tweaks and configurations;</p>
 					<ul>
