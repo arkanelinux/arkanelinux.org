@@ -326,3 +326,11 @@ code {
   font-family: monospace;
   padding: 0 3px;
 }
+
+.codeblock {
+  background-color: #eaeaea;
+	padding: 15px;
+  border-radius: 3px;
+  font-family: monospace;
+	white-space: pre-line
+}

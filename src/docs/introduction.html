@@ -28,9 +28,26 @@
 			<div class="container_paragraph">
 				<div class="text_box_wide">
 					<h1 class="font_thin padded_h">Getting started with Arkane Linux</h1>
-					<p>Lets start off with setting expectations; Arkane Linux is accessible to all, yet it assumes those using it have a fairly decent understanding of GNU/Linux. As stated on the front-page, Arkane does not introduce pointless abstraction, this means the system does not do any hand-holding, it assumes you are familiar with the components which comprise it and have the ability to read the manual of said components.</p>
-					<p>This document will give you a technical overview of Arkane and detail the specifics of its configuration.</p>
+					<p>Lets start off with setting expectations; Arkane Linux is accessible to all, yet it assumes those using it have a fairly decent understanding of GNU/Linux. Arkane avoids pointless abstraction, this means the system does not do any hand-holding, it assumes you are familiar with the components which comprise it and have the ability to read the manual of said components.</p>
+					<p>This document will provide you with some example usage or Arkdep, and give you a technical overview of the detail and specifics of Arkane Linux's configuration.</p>
 					<p>Here is detailed the default configurion of an installed system, the configuration of the ISO installation images differs in various ways from a full proper install.</p>
+					<h2 class="font_thin padded_hb">Arkdep usage</h2>
+					<p>The system is updated like so;</p>
+					<div class="codeblock">sudo arkdep deploy</div>
+					<p>When the <code>deploy</code> parameter is passed without providing any further arguments Arkdep will read <code>/arkdep/config</code> and combine <code>$repo_url/$repo_default_image</code> to infer from where it is expected to grab its images and which image variant it shoud grab. It will download the database file at <code>$repo_url/$repo_default_image/database</code> and grab the very first entry in the list, the top most entry in the database file is assumed to be the latest image available.</p>
+					<br>
+					<p>A specific image variant can be pulled like so;</p>
+					<div class="codeblock">sudo arkdep deploy test-arkanelinux-kde</div>
+					<p>Providing this extra argument will overwrite <code>$repo_default_image</code> allowing you to pull a different image variant from the same repository.</p>
+					<br>
+					<p>Specific image versions can also be requested;</p>
+					<div class="codeblock">sudo arkdep deploy test-arkanelinux-kde aaabbbccc</div>
+					<p>This argument will make it search the database file and download the first hit it finds.</p>
+					<p>If you are intend on pulling a specific version of the default image variant as defined in <code>$repo_default_image</code> the variant may be substituted with a <code>-</code>.</p>
+					<div class="codeblock">sudo arkdep deploy - aaabbbccc</div>
+					<br>
+					<p>Any image present in <code>/arkdep/cache</code>, for example an image called <code>aaabbbccc.tar.zst</code>, can also be installed directly skipping the database download;</p>
+					<div class="codeblock">sudo arkdep deploy cache aaabbbccc</div>
 					<h2 class="font_thin padded_hb">Base configuration of GNOME-based variants</h2>
 					<p>The GNOME variants all provide a very comparable configuration, a stock gnome-shell with the following notable tweaks and configurations;</p>
 					<ul>
@@ -39,7 +56,6 @@
 						<li>Preloaded with stable but not (yet) default GNOME apps from the GNOME Circle and GNOME Project</li>
 						<li><code>mutter-dynamic-buffering</code> patches included</li>
 						<li>Rebuild of <code>gnome-software</code> with packagekit support</li>
-						<li><code>firefox</code> defaults to Wayland</li>
 						<li><code>/home</code> Btrfs subvolume</li>
 						<li>systemd-boot bootloader</li>
 						<li>Swapfile configured in <code>/var</code></li>
