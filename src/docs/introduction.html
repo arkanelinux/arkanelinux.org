@@ -61,7 +61,7 @@
 					<br>
 					<p>Once all the desired changes have been made you can spin a new image by navigating to <code>arkdep-build.d</code>'s parant directory and running arkdep-build.</p>
 					<div class="codeblock">sudo arkdep-build customlinux</div>
-					<p>Once the image has finished building it will be placed inside of a directory called <code>target</code> located in the <code>arkdep-build.d</code> parent directory. To then install it without using an external repository copy the achive in to the <code>/arkdep/cache</code> directory and define cache as the image source when when doing a deployment.</p>
+					<p>Once the image has finished building it will be placed inside of a directory called <code>target</code> located in the <code>arkdep-build.d</code> parent directory. To then install it without using an external repository copy the achive in to the <code>/arkdep/cache</code> directory and define cache as the image source when doing a deployment.</p>
 					<div class="codeblock">sudo cp target/aaabbbccc.tar.zst /arkdep/cache/
 					sudo arkdep deploy cache aaabbbccc</div>
 					<h2 class="font_thin padded_hb">Base configuration of GNOME-based variants</h2>
