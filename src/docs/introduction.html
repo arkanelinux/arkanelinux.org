@@ -48,6 +48,12 @@
 					<br>
 					<p>Any image present in <code>/arkdep/cache</code>, for example an image called <code>aaabbbccc.tar.zst</code>, can also be installed directly skipping the database download;</p>
 					<div class="codeblock">sudo arkdep deploy cache aaabbbccc</div>
+					<br>
+					<p>Permanently rolling back to another image is done by manually calling systemd-boot's <code>bootctl</code>.</p>
+					<div class="codeblock">sudo bootctl set-default aaabbbccc
+
+					# Or alternative to perform just a one-shot boot
+					sudo bootctl set-oneshot aaabbbccc</div>
 					<h2 class="font_thin padded_hb">Spinning custom images with arkdep-build</h2>
 					<p>Do you like the technology but do not like the provided images? No problem! You can easily spin and deploy custom images should you desire to do so.</p>
 					<p>First make a copy of one of the existing arkane-build configurations in to a directory named <code>arkane-build.d</code>;</p>
