@@ -56,9 +56,9 @@
 					sudo bootctl set-oneshot aaabbbccc</div>
 					<h2 class="font_thin padded_hb">Spinning custom images with arkdep-build</h2>
 					<p>Do you like the technology but do not like the provided images? No problem! You can easily spin and deploy custom images should you desire to do so.</p>
-					<p>First make a copy of one of the existing arkane-build configurations in to a directory named <code>arkane-build.d</code>;</p>
-					<div class="codeblock">mkdir arkane-build.d
-					cp -r /etc/arkdep/test-arkanelinux-kde arkane-build.d/</div>
+					<p>First make a copy of one of the existing arkdep-build configurations in to a directory named <code>arkdep-build.d</code>;</p>
+					<div class="codeblock">mkdir arkdep-build.d
+					cp -r /etc/arkdep/test-arkanelinux-kde arkdep-build.d/</div>
 					<p>Next make your edits to the configuration files in <code>arkdep-build.d/test-arkanelinux-kde</code>, you may also rename the <code>test-arkanelinux-kde</code> configuration's directory, the name of the directory is used to build a specific image by name.</p>
 					<div class="codeblock">mv arkdep-build.d/test-arkanelinux-kde arkdep-build.d/customlinux</div>
 					<p><code>base.list</code> contains a list of packages installed during the bootstrapping process using pacstrap. <code>package.list</code> contains a list of packages which will be installed after the bootstrapping process using a chrooted pacman.</p>
