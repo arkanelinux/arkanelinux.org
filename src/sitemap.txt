@@ -1,1 +1,2 @@
 https://arkanelinux.org/downloads
+https://docs.arkanelinux.org/
