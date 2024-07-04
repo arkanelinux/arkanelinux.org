@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta property="og:title" content="Arkane Linux">
-		<meta property="og:description" content="An opinionated, immutable, atomic, multi-root Arch-based distibution.">
+		<meta property="og:description" content="An opinionated, immutable, atomic, Arch-based distibution.">
 		<meta property="og:image" content="https://arkanelinux.org/img/branding/arkane-logo.webp">
 		<title>Arkane Linux</title>
 		<link rel="stylesheet" href="/style/main.css">
@@ -35,7 +35,7 @@
 				<div class="text_box">
 					<h1 class="font_thin padded_h">Embrace the Arkane</h1>
 					<p>
-						Arkane Linux is an opinionated, immutable, atomic, multi-root Arch-based distibution which aims to provide a GNOME-centered experienced with minimal yet full featured and sensible non-intrusive defaults.
+						Arkane Linux is an opinionated, immutable, atomic Arch-based distibution which aims to provide a GNOME-centered experienced with minimal yet full featured and sensible non-intrusive defaults.
 					</p>
 				</div>
 			</div>
@@ -64,15 +64,15 @@
 		<div class="banner">
 			<div class="container">
 				<div class="text_box_half">
-					<h1 class="font_thin padded_h">Multi-root architecture</h1>
+					<h1 class="font_thin padded_h">Atomic updates</h1>
+						Updates are only applied if they are performed successfully. Should an update fail or somehow be interupted it will make no permanent changes to the system.
 					<p>
-						Did an upgrade introduce a bug or some other issue? Just roll back to the previous deployment of the system, it is probably still installed. This architecture adds an additional layer of stability guarantee to your system, an unusable system after an update with no easy way of recovering is a thing of the past.
 					</p>
 				</div>
 				<div class="text_box_half">
-					<h1 class="font_thin padded_h">Tailing the bleeding edge</h1>
+					<h1 class="font_thin padded_h">Immutable deployments</h1>
 					<p>
-						By default Arkane Linux is configured with and to make use of currently relevant and/or upcoming technologies and software. For example Arkane ships with mutter-dynamic-buffering by default and will adopt promissing GNOME Circle application as default once deemed mature and suitable upgrades over the old offerings.
+						The system is by default read-only and updates and done through prebuild Btrfs subvolume exports. Everyone is running the exact same system configuration, this makes it significantly easier to reproduce and solve bugs and issues.
 					</p>
 				</div>
 			</div>
@@ -85,7 +85,23 @@
 				<div class="text_box_half">
 					<h1 class="font_thin padded_h">Arkdep</h1>
 					<p>
-						Arkdep is a system utilized to build, manage and atomically deploy an immutable, Btrfs-based, multi-root system. Think of it as a package manager which reinstalls your entire OS upon update leaving the old deployment untouched and available should you wish to roll back to the pre-update state.
+						Arkdep is a self-developed deployment manager utilized to build, manage and atomically deploy an immutable, Btrfs-based system. Think of it as a package manager which reinstalls your entire OS upon update leaving the old deployment untouched and available should you wish to roll back to the pre-update state.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="banner">
+			<div class="container">
+				<div class="text_box_half">
+					<h1 class="font_thin padded_h">Stupidly simple</h1>
+					<p>
+						Arkane Linux mostly serves as a reference implementation of Arkdep. A lot of effort is put in to making the Arkdep tooling as simple and well documented as possible to allow others to easily adopt the technology for their own projects and personal system configurations.
+					</p>
+				</div>
+				<div class="text_box_half">
+					<h1 class="font_thin padded_h">Tailing the bleeding edge</h1>
+					<p>
+						By default Arkane Linux is configured with and to make use of currently relevant and/or upcoming technologies and software. For example Arkane ships with mutter-dynamic-buffering by default and will adopt promissing GNOME Circle application as default once deemed mature and suitable upgrades over the old offerings.
 					</p>
 				</div>
 			</div>
